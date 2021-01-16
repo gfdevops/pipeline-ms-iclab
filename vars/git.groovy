@@ -7,7 +7,7 @@ def merge(branchfrom, branchto) {
     figlet 'git merge'
     echo 'Merge '+branchfrom+' into '+branchto
     sh 'git checkout '+branchto
-    sh 'git merge origin/' + branchfrom
+    sh 'git merge ' + branchfrom
 }
 
 return this
