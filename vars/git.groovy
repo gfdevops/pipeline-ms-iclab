@@ -9,7 +9,8 @@ def merge(branchfrom, branchto) {
     def merge_text = 'Merge '+branchfrom+' into '+branchto
     echo merge_text
 
-    sh 'git fetch --p'
+
+    sh 'git fetch -p'
     sh 'git checkout -b '+branchfrom+' remotes/origin/'+branchfrom
     sh 'git pull origin '+branchfrom
     sh 'git checkout '+branchto
