@@ -10,12 +10,8 @@ def merge(branchfrom, branchto) {
     sh '''
         git fetch -p
         git checkout '''+ branchfrom + ''';git pull
-        
         git merge '''+ branchfrom +''' +''' ''' +'''+ branchto +'''
-        
         git commit -am '''Merged '''+ branchfrom +''' branch to '''+ branchto +''''
-        
         git push origin ''' + branchto + '''
-        
         '''
 }
