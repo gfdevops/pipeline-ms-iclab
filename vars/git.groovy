@@ -12,7 +12,7 @@ def merge(branchfrom, branchto) {
     
     sh 'git checkout '+branchto
     sh 'git pull origin '+branchto
-    sh 'git merge'+branchfrom
+    sh 'git merge '+branchfrom
     sh 'git commit -am \" Merge '+branchfrom+' a '+branchto+' \"'
     sh 'git push origin '+branchto
 }
