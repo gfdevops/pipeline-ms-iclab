@@ -44,7 +44,7 @@ def execute() {
         try {
             env.JENKINS_STAGE = env.STAGE_NAME
             echo env.JENKINS_STAGE
-            git.merge(env.GIT_BRANCH,'main')
+            git.merge(env.GIT_LOCAL_BRANCH,'main')
         }catch (Exception e){
             executeError(e)
         }
@@ -54,7 +54,7 @@ def execute() {
         try {
             env.JENKINS_STAGE = env.STAGE_NAME
             echo env.JENKINS_STAGE
-            git.merge(env.GIT_BRANCH,'develop')
+            git.merge(env.GIT_LOCAL_BRANCH,'develop')
         }catch (Exception e){
             executeError(e)
         }
