@@ -4,7 +4,7 @@
 def getBranchName() {
     def branches = ['develop', 'main']
 
-    def branch = env.GIT_BRANCH
+    def branch = getValidBranchName()
 
     if (branches.contains(branch)) {
         return branch
@@ -25,7 +25,7 @@ def isFeature(String branchName) {
 
 //USO : if (validate.isBranchName('develop')) {}
 def isBranchName(String branchName) {
-    return branchName == env.GIT_BRANCH
+    return branchName == getValidBranchName()
 }
 
 //Validar formato de nombre de rama release según patrón
@@ -33,4 +33,9 @@ def isBranchName(String branchName) {
 //USO :  if (validate.validateReleaseNameFormat('release-v1-0-0')) {  echo 'OK' }
 def isRelease(String branchName) {
     return branchName =~ /(release-v[0-9]+)-([0-9]+)-([0-9]+)/
+}
+
+def getValidBranchName() {
+    def branchsplit = env.GIT_BRANCH.split("/")
+    return branchsplit.length == 1 ? branchsplit[0] : branchsplit[1]
 }
