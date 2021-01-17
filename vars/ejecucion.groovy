@@ -10,7 +10,7 @@ def call() {
 						def tech = new test.validateTech()
 						println 'Tecnologia: ' + tech.get()
 						
-                        def branchName = validate.getValidBranchName()
+                        def branchName = validate.getBranchName(validate.getValidBranchName())
 
                         figlet validate.getValidBranchName()
                         println 'branch detectado ' + branchName
