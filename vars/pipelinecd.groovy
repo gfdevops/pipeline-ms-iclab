@@ -44,7 +44,7 @@ def execute() {
         try {
             env.JENKINS_STAGE = env.STAGE_NAME
             echo env.JENKINS_STAGE
-            git.merge(env.GIT_LOCAL_BRANCH,'main')
+            git.merge(validate.getValidBranchName(),'main')
         }catch (Exception e){
             executeError(e)
         }
@@ -54,7 +54,7 @@ def execute() {
         try {
             env.JENKINS_STAGE = env.STAGE_NAME
             echo env.JENKINS_STAGE
-            git.merge(env.GIT_LOCAL_BRANCH,'develop')
+            git.merge(validate.getValidBranchName(),'develop')
         }catch (Exception e){
             executeError(e)
         }
@@ -63,6 +63,7 @@ def execute() {
 	stage('gitTagMaster') {
         env.JENKINS_STAGE = env.STAGE_NAME
         echo env.JENKINS_STAGE
+        git.tag('main','feature-blabla')
 	}	
 
 }
