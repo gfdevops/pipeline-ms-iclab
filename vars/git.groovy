@@ -5,9 +5,17 @@ def diff(){
 
 def merge(branchfrom, branchto) {
     figlet 'git merge'
-    echo 'Merge '+branchfrom+' into '+branchto
-    sh 'git checkout '+branchto
-    sh 'git merge ' + branchfrom
-}
+    def merge_text = 'Merge '+branchfrom+' into '+branchto
 
-return this
+    sh '''
+        git fetch -p
+        git checkout '''+ branchfrom + ''';git pull
+        
+        git merge '''+ branchfrom +''' +''' ''' +'''+ branchto +'''
+        
+        git commit -am '''Merged '''+ Origin +''' branch to '''+ Dest +''''
+        
+        git push origin ''' + branchto + '''
+        
+        '''
+}
