@@ -8,7 +8,7 @@ def merge(branchfrom, branchto) {
     figlet 'git merge'
     def merge_text = 'Merge '+branchfrom+' into '+branchto
     echo merge_text
-    echo env
+
     sh 'git checkout -b '+branchfrom+' remotes/'+branchfrom
     sh 'git pull origin '+branchfrom
     sh 'git checkout '+branchto
