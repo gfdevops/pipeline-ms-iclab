@@ -20,7 +20,7 @@ def merge(branchfrom, branchto) {
 
 def tag(branchto,tagname) {
     figlet 'git tag'
-    def merge_text = 'Merge '+branchfrom+' into '+branchto
+    def merge_text = 'Tag a main con el nombre de '+tagname
     echo merge_text
 
     //sh 'git remote set-url origin https://mcontrerass:X1Ex1en!@github.com/usach-devops/ms-iclab.git'
