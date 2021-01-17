@@ -13,7 +13,7 @@ def merge(branchfrom, branchto) {
         
         git merge '''+ branchfrom +''' +''' ''' +'''+ branchto +'''
         
-        git commit -am '''Merged '''+ Origin +''' branch to '''+ Dest +''''
+        git commit -am '''Merged '''+ branchfrom +''' branch to '''+ branchto +''''
         
         git push origin ''' + branchto + '''
         
