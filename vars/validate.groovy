@@ -25,7 +25,7 @@ def isFeature(String branchName) {
 
 //USO : if (validate.isBranchName('develop')) {}
 def isBranchName(String branchName) {
-    return branchName == getValidBranchName()
+    return branchName == validate.getValidBranchName()
 }
 
 //Validar formato de nombre de rama release según patrón

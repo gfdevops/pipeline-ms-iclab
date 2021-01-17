@@ -12,7 +12,7 @@ def call() {
 						
                         def branchName = validate.getValidBranchName()
 
-                        figlet getValidBranchName()
+                        figlet validate.getValidBranchName()
                         println 'branch detectado ' + branchName
 
                         sh "printenv"
