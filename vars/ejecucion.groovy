@@ -15,7 +15,7 @@ def call() {
                         figlet env.GIT_BRANCH
                         println 'branch detectado ' + branchName
 
-                        echo env
+                        sh "printenv"
 
                         switch (branchName) {
                            case ['develop', 'feature']:
